@@ -19,7 +19,6 @@ public class UserController {
 
     @GetMapping()
     public String users(Model model){
-        //userService.save(new User("Qwe", "Qwe", (byte) 10));
         model.addAttribute("users", userService.getAllUsers());
         return "/users";
     }
@@ -39,7 +38,6 @@ public class UserController {
     @GetMapping("/{id}/edit")
     public String edit(@PathVariable("id") Long id, Model model) {
         model.addAttribute("user", userService.getUserById(id));
-        //model.addAttribute("user", new User());
         return "/edit";
     }
 
